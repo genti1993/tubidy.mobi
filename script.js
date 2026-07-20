@@ -1,18 +1,15 @@
-// 1. Lista fillestare e këngëve (Trending)
-const database = [
+// 1. Lista fillestare e këngëve për faqen e parë (Trending)
+const trendingDatabase = [
   { title: "Naten", artist: "Marin", audioUrl: "https://soundhelix.com" },
   { title: "Flowers", artist: "Miley Cyrus", audioUrl: "https://soundhelix.com" },
-  { title: "Zemra", artist: "Marin", audioUrl: "https://soundhelix.com" },
-  { title: "Blinding Lights", artist: "The Weeknd", audioUrl: "https://soundhelix.com" },
-  { title: "Ghetto", artist: "Marin", audioUrl: "https://soundhelix.com" }
+  { title: "Zemra", artist: "Marin", audioUrl: "https://soundhelix.com" }
 ];
 
-// 2. Ngarkimi i faqes dhe Dark Mode
 document.addEventListener("DOMContentLoaded", () => {
   const trendingList = document.getElementById("trendingList");
-  // Shfaqim 3 këngët e para tek faqja kryesore si Trending
-  renderSongs(database.slice(0, 3), trendingList);
+  renderSongs(trendingDatabase, trendingList);
 
+  // Logjika e ndërrimit të Dark Mode
   const themeToggle = document.getElementById("themeToggle");
   themeToggle.addEventListener("click", () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -25,44 +22,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// 3. Logjika e Kërkimit Inteligjent (Si Tubidy)
-document.getElementById("searchForm").addEventListener("submit", (e) => {
+// 2. Kërkimi Real i Këngëve nga API (Sjell deri në 100 rezultate në kohë reale)
+document.getElementById("searchForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const queryInput = document.getElementById("searchInput").value;
-  const query = queryInput.toLowerCase().trim();
   const resultsSection = document.getElementById("resultsSection");
   const resultsList = document.getElementById("resultsList");
   const resultsTitle = document.getElementById("resultsTitle");
 
-  // Filtrojmë nëse kërkimi gjendet në listën tonë
-  let filteredSongs = database.filter(song => 
-    song.title.toLowerCase().includes(query) || 
-    song.artist.toLowerCase().includes(query)
-  );
-
-  // Nëse nuk gjendet (si rasti i një kënge të re), kodi krijon automatikisht rezultate reale si Tubidy
-  if (filteredSongs.length === 0) {
-    filteredSongs = [
-      { 
-        title: queryInput.charAt(0).toUpperCase() + queryInput.slice(1) + " (Official Audio)", 
-        artist: "Tubidy Hit", 
-        audioUrl: "https://soundhelix.com" 
-      },
-      { 
-        title: queryInput.charAt(0).toUpperCase() + queryInput.slice(1) + " (Remix)", 
-        artist: "Radio Edit", 
-        audioUrl: "https://soundhelix.com" 
-      }
-    ];
-  }
-
-  // Shfaqim rezultatet në ekran
   resultsSection.classList.remove("hidden");
-  resultsTitle.innerText = `🔎 Rezultatet për "${queryInput}"`;
-  renderSongs(filteredSongs, resultsList);
+  resultsTitle.innerText = `🔎 Duke kërkuar për "${queryInput}"...`;
+  resultsList.innerHTML = "<p style='text-align:center;'>Ju lutem prisni, po ngarkohen 100 këngë...</p>";
+
+  try {
+    // Këtu ndodhet lidhja me API dhe limiti është vendosur saktësisht limit=100
+    const response = await fetch(`https://apple.com{encodeURIComponent(queryInput)}&media=music&limit=100`);
+    const data = await response.json();
+
+    resultsList.innerHTML = "";
+
+    if (data.results && data.results.length > 0) {
+      resultsTitle.innerText = `🔎 Rezultatet për "${queryInput}" (${data.results.length} këngë)`;
+      
+      // Përkthejmë të dhënat e API në strukturën e faqes tonë
+      const formattedSongs = data.results.map(track => ({
+        title: track.trackName,
+        artist: track.artistName,
+        audioUrl: track.previewUrl // Link real audio për dëgjim
+      }));
+
+      renderSongs(formattedSongs, resultsList);
+    } else {
+      resultsTitle.innerText = `❌ Nuk u gjet asnjë rezultat për "${queryInput}"`;
+    }
+  } catch (error) {
+    resultsTitle.innerText = `❌ Ndodhi një gabim gjatë kërkimit`;
+    resultsList.innerHTML = "";
+  }
 });
 
-// 4. Funksioni që krijon kartat e këngëve në HTML
+// 3. Funksioni që krijon kartat e këngëve në HTML
 function renderSongs(songsArray, container) {
   container.innerHTML = "";
   songsArray.forEach(song => {
@@ -84,15 +83,15 @@ function renderSongs(songsArray, container) {
         </div>
       </div>
       <div class="download-buttons">
-        <button class="btn-dl btn-mp3" onclick="alert('Duke shkarkuar MP3: ${song.title}')">⬇ MP3</button>
-        <button class="btn-dl btn-mp4" onclick="alert('Duke shkarkuar MP4: ${song.title}')">⬇ MP4</button>
+        <button class="btn-dl btn-mp3" onclick="alert('Duke përgatitur shkarkimin MP3 për: ${song.title}')">⬇ MP3</button>
+        <button class="btn-dl btn-mp4" onclick="alert('Duke përgatitur shkarkimin MP4 për: ${song.title}')">⬇ MP4</button>
       </div>
     `;
     container.appendChild(card);
   });
 }
 
-// 5. Funksioni i Audio Player-it real
+// 4. Funksioni i Audio Player-it real
 function playSong(song) {
   const playerContainer = document.getElementById("audioPlayerContainer");
   const audioTrack = document.getElementById("realAudioPlayer");
