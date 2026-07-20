@@ -1,10 +1,5 @@
-# Skedarët e sistemit
 .DS_Store
 Thumbs.db
-
-# Konfigurimet e programeve (IDEs)
 .vscode/
 .idea/
-
-# Regjistrat lokalë (Logs)
 *.log
