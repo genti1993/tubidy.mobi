@@ -1,4 +1,4 @@
-/* Ngarkimi i Shkrimit Ubuntu */
+
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
@@ -12,8 +12,8 @@ body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #f9f9f9;
-  color: #333333;
+  background-color: #f4f6f9;
+  color: #1a1a1a;
   transition: background-color 0.3s, color 0.3s;
   display: flex;
   flex-direction: column;
@@ -22,79 +22,143 @@ body {
 
 header {
   text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .logo {
-  width: 180px;
+  width: 190px;
   max-width: 100%;
-  height: auto;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin-top: 1rem;
-}
+h1 { font-size: 1.6rem; margin-top: 1.2rem; font-weight: 500; letter-spacing: -0.5px; }
+h2 { font-size: 1.2rem; margin-bottom: 1.2rem; width: 100%; text-align: left; font-weight: 500; }
 
-.subtitle {
-  text-align: center;
-  color: #666666;
-  font-size: 0.95rem;
-  margin-top: 1.5rem;
-}
-
-/* Stilimi i Fushës së Kërkimit */
+/* Fusha e Kërkimit Premium */
 .search-form {
   display: flex;
   width: 100%;
   max-width: 600px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   border-radius: 50px;
   overflow: hidden;
   background-color: #ffffff;
+  margin-bottom: 2.5rem;
+  border: 1px solid #e1e4e8;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-form:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #007bff;
 }
 
 .search-input {
   flex: 1;
   border: none;
-  padding: 15px 25px;
-  font-size: 1rem;
+  padding: 18px 28px;
+  font-size: 1.05rem;
   outline: none;
   background-color: transparent;
-  color: #333333;
+  color: #1a1a1a;
 }
 
 .search-button {
   background-color: #007bff;
   color: #ffffff;
   border: none;
-  padding: 0 30px;
+  padding: 0 35px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
-.search-button:hover {
-  background-color: #0056b3;
+.search-button:hover { background-color: #0056b3; }
+
+/* Seksionet e Këngëve */
+.media-section {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
 }
+
+.hidden { display: none; }
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Karta e Re e Këngës */
+.song-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  border: 1px solid #edf0f4;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.song-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.song-details-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.music-icon {
+  font-size: 1.4rem;
+  background: #f0f3f6;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.song-info .song-title {
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.song-info .song-artist {
+  font-size: 0.88rem;
+  color: #6c757d;
+}
+
+/* Butonat e Shkarkimit */
+.download-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-dl {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-dl:hover { opacity: 0.9; }
+.btn-mp3 { background-color: #2eb85c; color: white; }
+.btn-mp4 { background-color: #e55353; color: white; }
 
 /* Përshtatja për Dark Mode (Modaliteti i Errët) */
-html.dark body {
-  background-color: #121212;
-  color: #ffffff;
-}
+html.dark body { background-color: #0f0f11; color: #f8f9fa; }
+html.dark .search-form, html.dark .song-card { background-color: #18181c; border-color: #26262b; }
+html.dark .search-input { color: #f8f9fa; }
+html.dark .song-info .song-artist { color: #a1a1aa; }
+html.dark .music-icon { background: #222227; }
 
-html.dark .search-form {
-  background-color: #1e1e1e;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-html.dark .search-input {
-  color: #ffffff;
-}
-
-html.dark .subtitle {
-  color: #aaaaaa;
-}
