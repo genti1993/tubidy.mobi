@@ -1,4 +1,4 @@
-
+/* Ngarkimi i Shkrimit Ubuntu */
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
@@ -7,21 +7,94 @@
   font-display: swap;
 }
 
+/* Rregullat e Përgjithshme */
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   color: #333333;
   transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+header {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666666;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+}
+
+/* Stilimi i Fushës së Kërkimit */
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+  color: #333333;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 0 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Përshtatja për Dark Mode (Modaliteti i Errët) */
 html.dark body {
   background-color: #121212;
   color: #ffffff;
 }
 
-header {
-  text-align: center;
-  padding: 2rem 0;
+html.dark .search-form {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .search-input {
+  color: #ffffff;
+}
+
+html.dark .subtitle {
+  color: #aaaaaa;
 }
