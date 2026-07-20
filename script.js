@@ -1,3 +1,51 @@
+const database = [
+  { title: "Flowers", artist: "Miley Cyrus" },
+  { title: "Blinding Lights", artist: "The Weeknd" },
+  { title: "Shape of You", artist: "Ed Sheeran" },
+  { title: "Another Love", artist: "Tom Odell" },
+  { title: "Mockingbird", artist: "Eminem" }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const trendingList = document.getElementById("trendingList");
+  renderSongs(database.slice(0, 3), trendingList);
+
+  // Logjika e ndërrimit të Dark Mode
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.addEventListener("click", () => {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+    }
+  });
+});
+
+document.getElementById("searchForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const query = document.getElementById("searchInput").value.toLowerCase().trim();
+  const resultsSection = document.getElementById("resultsSection");
+  const resultsList = document.getElementById("resultsList");
+  const resultsTitle = document.getElementById("resultsTitle");
+
+  const filteredSongs = database.filter(song => 
+    song.title.toLowerCase().includes(query) || 
+    song.artist.toLowerCase().includes(query)
+  );
+
+  resultsSection.classList.remove("hidden");
+  resultsList.innerHTML = "";
+
+  if (filteredSongs.length > 0) {
+    resultsTitle.innerText = `🔎 Rezultatet për "${document.getElementById("searchInput").value}"`;
+    renderSongs(filteredSongs, resultsList);
+  } else {
+    resultsTitle.innerText = `❌ Nuk u gjet asnjë rezultat për "${document.getElementById("searchInput").value}"`;
+  }
+});
+
 function renderSongs(songsArray, container) {
   container.innerHTML = "";
   songsArray.forEach(song => {
@@ -19,27 +67,4 @@ function renderSongs(songsArray, container) {
     container.appendChild(card);
   });
 }
-/* Stilimi i butonit Dark Mode */
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #ffffff;
-  border: 1px solid #edf0f4;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: background-color 0.2s, transform 0.2s;
-  z-index: 10;
-}
 
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-html.dark .theme-toggle {
-  background-color: #18181c;
-  border-color: #26262b;
-}
