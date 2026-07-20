@@ -1,16 +1,36 @@
+// Data bazë me linke reale audio (Copyright-Free nga Pixabay)
 const database = [
-  { title: "Flowers", artist: "Miley Cyrus" },
-  { title: "Blinding Lights", artist: "The Weeknd" },
-  { title: "Shape of You", artist: "Ed Sheeran" },
-  { title: "Another Love", artist: "Tom Odell" },
-  { title: "Mockingbird", artist: "Eminem" }
+  { 
+    title: "Lo-Fi Longing", 
+    artist: "Lofi Hour", 
+    audioUrl: "https://soundhelix.com" 
+  },
+  { 
+    title: "Summer Breeze", 
+    artist: "Acoustic Chill", 
+    audioUrl: "https://soundhelix.com" 
+  },
+  { 
+    title: "Synthwave Dreams", 
+    artist: "Retro Beats", 
+    audioUrl: "https://soundhelix.com" 
+  },
+  { 
+    title: "Midnight Drive", 
+    artist: "Neon Future", 
+    audioUrl: "https://soundhelix.com" 
+  },
+  { 
+    title: "Eminem Style Beat", 
+    artist: "Shadow Rap", 
+    audioUrl: "https://soundhelix.com" 
+  }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
   const trendingList = document.getElementById("trendingList");
   renderSongs(database.slice(0, 3), trendingList);
 
-  // Logjika e ndërrimit të Dark Mode
   const themeToggle = document.getElementById("themeToggle");
   themeToggle.addEventListener("click", () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -51,6 +71,14 @@ function renderSongs(songsArray, container) {
   songsArray.forEach(song => {
     const card = document.createElement("div");
     card.className = "song-card";
+    
+    // Kur klikohet karta, luhet kënga (përveç se kur klikohen butonat e shkarkimit)
+    card.onclick = (e) => {
+      if (!e.target.classList.contains('btn-dl')) {
+        playSong(song);
+      }
+    };
+
     card.innerHTML = `
       <div class="song-details-wrapper">
         <div class="music-icon">🎵</div>
@@ -66,5 +94,24 @@ function renderSongs(songsArray, container) {
     `;
     container.appendChild(card);
   });
+}
+
+// Funksioni që kontrollon Audio Player-in real
+function playSong(song) {
+  const playerContainer = document.getElementById("audioPlayerContainer");
+  const audioTrack = document.getElementById("realAudioPlayer");
+  const playerTitle = document.getElementById("playerTitle");
+  const playerArtist = document.getElementById("playerArtist");
+
+  // Shfaqim panelin e player-it
+  playerContainer.classList.remove("hidden");
+
+  // Vendosim të dhënat e këngës së re
+  playerTitle.innerText = song.title;
+  playerArtist.innerText = song.artist;
+  audioTrack.src = song.audioUrl;
+
+  // Nisim muzikën automatikisht
+  audioTrack.play();
 }
 
