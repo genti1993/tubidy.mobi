@@ -1,0 +1,27 @@
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://cloudflare.com') format('woff2');
+  font-display: swap;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
