@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas. Shijoni muzikë MP3 320kbps teat cilësisë së lartë.">
+    <meta name="description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas. Shijoni muzikë MP3 320kbps të cilësisë së lartë.">
     <meta name="robots" content="index, follow">
     <title>Tubidy - Shkarkime MP3 & MP4 | Muzikë dhe Video Falas Online</title>
     
@@ -27,7 +27,6 @@
     </script>
   </head>
   <body>
-    <!-- Butoni për Dark Mode -->
     <button id="themeToggle" class="theme-toggle" aria-label="Ndrysho temën">🌓</button>
 
     <header>
@@ -52,6 +51,16 @@
       </section>
     </main>
 
+    <!-- Audio Player Real (I fshehur në fillim) -->
+    <div id="audioPlayerContainer" class="audio-player-container hidden">
+      <div class="player-info">
+        <span id="playerTitle" class="player-title">Titulli i Këngës</span>
+        <span id="playerArtist" class="player-artist">Artisti</span>
+      </div>
+      <audio id="realAudioPlayer" controls></audio>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
+
