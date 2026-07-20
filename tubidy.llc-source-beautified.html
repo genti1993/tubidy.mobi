@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Tubidy allows you to download and stream music and videos for free. You can enjoy high-quality 320kbps MP3 music and MP4 Videos. No need to sign up, 100% free.">
+    <meta name="robots" content="index, follow">
+    <title>Tubidy - MP3 & MP4 Downloads | Free Unlimited Music & Videos Online</title>
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tubidy - MP3 &amp; MP4 Downloads | Free Unlimited Music &amp; Videos Online">
+    <meta property="og:description" content="Tubidy allows you to download and stream music and videos for free. You can enjoy high-quality 320kbps MP3 music and MP4 Videos. No need to sign up, 100% free.">
+    <meta property="og:url" content="https://tubidy.llc">
+    <meta property="og:site_name" content="Tubidy">
+    <meta property="og:image" content="https://tubidy.llc/images/logo.svg">
+    <link href="https://tubidy.llc" rel="canonical">
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+
+    </script>
+    <style type="text/css">
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/latin-ext/400/normal.woff2);
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/cyrillic-ext/400/normal.woff2);
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/cyrillic/400/normal.woff2);
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/greek/400/normal.woff2);
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/greek-ext/400/normal.woff2);
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/latin/400/normal.woff2);
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/greek/500/normal.woff2);
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/greek-ext/500/normal.woff2);
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/latin-ext/500/normal.woff2);
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/cyrillic/500/normal.woff2);
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/cyrillic-ext/500/normal.woff2);
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/latin/500/normal.woff2);
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/cyrillic/700/normal.woff2);
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/cyrillic-ext/700/normal.woff2);
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/latin-ext/700/normal.woff2);
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/greek/700/normal.woff2);
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/greek-ext/700/normal.woff2);
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/cf-fonts/s/ubuntu/5.2.8/latin/700/normal.woff2);
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+
+    </style>
+    <link href="https://tubidy.llc/themes/tubidy2/css/main.css" rel="preload" as="style">
+    <link href="https://tubidy.llc/themes/tubidy2/js/main.js" rel="modulepreload">
+    <link href="https://tubidy.llc/themes/tubidy2/css/main.css" rel="stylesheet">
+    <script type="module" src="https://tubidy.llc/themes/tubidy2/js/main.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.10"></script>
+    <script src="https://unpkg.com/htmx-ext-head-support@2.0.5/head-support.js"></script>
+  </head>
+  <body class="bg-gray-100 leading-6 text-gray-800 dark:bg-gray-900 dark:text-gray-100" hx-boost="true" hx-ext="head-support">
+    <header class="sticky top-0 z-50 flex border-b border-sky-300 bg-sky-300 px-6 text-white dark:border-black dark:bg-gray-800">
+      <div class="container mx-auto flex flex-wrap items-center justify-between gap-x-10 gap-y-6 py-6 lg:py-5"><a class="mr-auto" href="https://tubidy.llc"><img class="h-12" src="https://tubidy.llc/images/logo.svg" alt="Tubidy" width="114" height="48"></a>
+        <nav class="menu order-2 -my-3 hidden w-full flex-col gap-10 lg:order-1 lg:my-0 lg:flex lg:w-auto lg:flex-row lg:items-center">
+          <ul class="flex flex-col gap-x-5 lg:flex-row">
+            <li><a class="block py-1.5 hover:text-gray-800 dark:hover:text-gray-500" href="https://tubidy.llc/top-videos">Top Videos</a></li>
+            <li><a class="block py-1.5 hover:text-gray-800 dark:hover:text-gray-500" href="https://tubidy.llc/top-searches">Top Searches</a></li>
+            <li class="relative"><a class="flex items-center gap-2 py-1.5 hover:text-gray-800 dark:hover:text-gray-500" href="#" hx-boost="false"><span>Mood &amp; Genres</span> <svg class="-mx-0.5 h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9">
+                  <path fill="currentColor" d="M7.18 7.62L3.03 2.79c-.6-.7-.1-1.79.82-1.79h8.29c.93 0 1.42 1.09.82 1.79L8.82 7.62c-.43.5-1.21.5-1.64 0" />
+                </svg></a>
+              <ul class="sub-menu">
+                <li><a href="https://tubidy.llc/mood/autumn">Autumn</a></li>
+                <li><a href="https://tubidy.llc/mood/chill">Chill</a></li>
+                <li><a href="https://tubidy.llc/mood/commute">Commute</a></li>
+                <li><a href="https://tubidy.llc/mood/energize">Energize</a></li>
+                <li><a href="https://tubidy.llc/mood/feel-good">Feel-good</a></li>
+                <li><a href="https://tubidy.llc/mood/focus">Focus</a></li>
+                <li><a href="https://tubidy.llc/mood/gaming">Gaming</a></li>
+                <li><a href="https://tubidy.llc/mood/party">Party</a></li>
+                <li><a href="https://tubidy.llc/mood/romance">Romance</a></li>
+                <li><a href="https://tubidy.llc/mood/sad">Sad</a></li>
+                <li><a href="https://tubidy.llc/mood/sleep">Sleep</a></li>
+                <li><a href="https://tubidy.llc/mood/summer">Summer</a></li>
+                <li><a href="https://tubidy.llc/mood/winter">Winter</a></li>
+                <li><a href="https://tubidy.llc/mood/workout">Workout</a></li>
+                <li><a href="https://tubidy.llc/genre/african">African</a></li>
+                <li><a href="https://tubidy.llc/genre/arabic">Arabic</a></li>
+                <li><a href="https://tubidy.llc/genre/blues">Blues</a></li>
+                <li><a href="https://tubidy.llc/genre/bollywood-indian">Bollywood &amp; Indian</a></li>
+                <li><a href="https://tubidy.llc/genre/classical">Classical</a></li>
+                <li><a href="https://tubidy.llc/genre/country-and-americana">Country and Americana</a></li>
+                <li><a href="https://tubidy.llc/genre/dance-and-electronic">Dance and electronic</a></li>
+                <li><a href="https://tubidy.llc/genre/decades">Decades</a></li>
+                <li><a href="https://tubidy.llc/genre/family">Family</a></li>
+                <li><a href="https://tubidy.llc/genre/folk-and-acoustic">Folk and acoustic</a></li>
+                <li><a href="https://tubidy.llc/genre/german-hip-hop">German hip-hop</a></li>
+                <li><a href="https://tubidy.llc/genre/german-pop">German pop</a></li>
+                <li><a href="https://tubidy.llc/genre/hip-hop">Hip-hop</a></li>
+                <li><a href="https://tubidy.llc/genre/indie-and-alternative">Indie and alternative</a></li>
+                <li><a href="https://tubidy.llc/genre/j-pop">J-Pop</a></li>
+                <li><a href="https://tubidy.llc/genre/jazz">Jazz</a></li>
+                <li><a href="https://tubidy.llc/genre/k-pop">K-Pop</a></li>
+                <li><a href="https://tubidy.llc/genre/latin">Latin</a></li>
+                <li><a href="https://tubidy.llc/genre/mandopop-cantopop">Mandopop &amp; Cantopop</a></li>
+                <li><a href="https://tubidy.llc/genre/metal">Metal</a></li>
+                <li><a href="https://tubidy.llc/genre/pop">Pop</a></li>
+                <li><a href="https://tubidy.llc/genre/r-b-and-soul">R&amp;B and soul</a></li>
+                <li><a href="https://tubidy.llc/genre/reggae-and-caribbean">Reggae and caribbean</a></li>
+                <li><a href="https://tubidy.llc/genre/rock">Rock</a></li>
+                <li><a href="https://tubidy.llc/genre/schlager">Schlager</a></li>
+                <li><a href="https://tubidy.llc/genre/soundtracks-and-musicals">Soundtracks and musicals</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="order-1 flex gap-6"><button class="toggle-menu -mx-1.5 inline-flex h-8 w-8 items-center justify-center hover:text-gray-800 dark:hover:text-gray-500 lg:order-2 lg:hidden" type="button" aria-label="Switch Appearance"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8.5h16m-16 7h16" color="currentColor" />
+            </svg></button> <button class="toggle-search -mx-2 inline-flex h-8 w-8 items-center justify-center hover:text-gray-800 dark:hover:text-gray-500 lg:order-2 lg:hidden" type="button" aria-label="Switch Appearance"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21l-4.3-4.3" />
+              </g>
+            </svg></button> <button class="toggle-appearance -mx-1.5 inline-flex h-8 w-8 items-center justify-center hover:text-gray-800 dark:hover:text-gray-500 lg:order-2" type="button" aria-label="Switch Appearance"><svg class="moon hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M20.958 15.325c.204-.486-.379-.9-.868-.684a7.684 7.684 0 0 1-3.101.648c-4.185 0-7.577-3.324-7.577-7.425a7.28 7.28 0 0 1 1.134-3.91c.284-.448-.057-1.068-.577-.936C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21c3.9 0 7.24-2.345 8.632-5.675" />
+              <path fill="currentColor" d="M15.611 3.103c-.53-.354-1.162.278-.809.808l.63.945a2.332 2.332 0 0 1 0 2.588l-.63.945c-.353.53.28 1.162.81.808l.944-.63a2.332 2.332 0 0 1 2.588 0l.945.63c.53.354 1.162-.278.808-.808l-.63-.945a2.332 2.332 0 0 1 0-2.588l.63-.945c.354-.53-.278-1.162-.809-.808l-.944.63a2.332 2.332 0 0 1-2.588 0z" />
+            </svg> <svg class="sun h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+                <path d="M12 3V2m0 20v-1m9-9h1M2 12h1m15.5-6.5L20 4M4 20l1.5-1.5M4 4l1.5 1.5m13 13L20 20" />
+                <circle cx="12" cy="12" r="4" />
+              </g>
+            </svg></button></div>
+        <form class="search-form relative order-3 hidden w-full lg:block lg:w-auto" action="/" method="get" hx-boost="false"><svg class="pointer-events-none absolute left-3 top-2.5 h-5 w-5 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="evenodd">
+              <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+              <path fill="currentColor" d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0" />
+            </g>
+          </svg> <input class="h-10 w-full rounded-md bg-white pl-10 pr-3.5 text-gray-800 placeholder-gray-500 outline-none dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 lg:w-auto" name="search" type="text" spellcheck="false" autocomplete="off" placeholder="Search" size="22">
+          <ul class="suggests-list"></ul>
+        </form>
+      </div>
+    </header>
+    <main class="px-6">
+      <div class="container mx-auto py-10">
+        <h1 class="-mt-1.5 mb-7 text-center text-3xl font-bold">Tubidy</h1>
+        <p class="mb-[34px] text-center">Tubidy is your favorite platform for top-notch 320kbps MP3 music and MP4 videos. You can explore our huge library of songs and videos. Enjoy fast, free downloads without needing to sign up.</p>
+        <h2 class="mb-[25px] flex items-center justify-center gap-3 text-center text-2xl font-bold"><svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <path fill="currentColor" d="M212.92 17.71a7.89 7.89 0 0 0-6.86-1.46l-128 32A8 8 0 0 0 72 56v110.1A36 36 0 1 0 88 196v-93.75l112-28v59.85a36 36 0 1 0 16 29.9V24a8 8 0 0 0-3.08-6.29" />
+          </svg> <span>Moods &amp; genres</span></h2>
+        <div class="mb-10 grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-2 lg:grid-cols-4"><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/mood/autumn"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Autumn</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/mood/chill"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Chill</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/mood/commute"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Commute</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/mood/energize"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Energize</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/genre/african"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">African</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/genre/arabic"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Arabic</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/genre/blues"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Blues</span> </a><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/genre/bollywood-indian"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Bollywood &amp; Indian</span></a></div>
+        <h2 class="mb-[25px] flex items-center justify-center gap-3 text-center text-2xl font-bold"><svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <path fill="currentColor" d="M212.92 17.71a7.89 7.89 0 0 0-6.86-1.46l-128 32A8 8 0 0 0 72 56v110.1A36 36 0 1 0 88 196v-93.75l112-28v59.85a36 36 0 1 0 16 29.9V24a8 8 0 0 0-3.08-6.29" />
+          </svg> <span>Explore</span></h2>
+        <div class="mb-10 grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-2 lg:grid-cols-4"><a class="group flex overflow-hidden rounded-md" href="https://tubidy.llc/explore/amapiano"><span class="w-3 bg-sky-300"></span> <span class="flex-1 bg-gray-800 py-3 text-center text-white group-hover:bg-gray-700">Amapiano</span></a></div>
+        <h2 class="mb-[25px] flex items-center justify-center gap-3 text-center text-2xl font-bold"><svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <path fill="currentColor" d="M192 72v112a16 16 0 0 1-16 16H32a16 16 0 0 1-16-16V72a16 16 0 0 1 16-16h144a16 16 0 0 1 16 16m58 .25a8.23 8.23 0 0 0-6.63 1.22l-33.59 22.39a4 4 0 0 0-1.78 3.33v57.62a4 4 0 0 0 1.78 3.33l33.78 22.52a8 8 0 0 0 8.58.19a8.33 8.33 0 0 0 3.86-7.17V80a8 8 0 0 0-6-7.75" />
+          </svg> <span>Now Trending</span></h2>
+        <div class="-mx-6 grid grid-cols-1 gap-6 sm:mx-0 lg:grid-cols-2">
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/C9nB4NITiII/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/C9nB4NITiII/mqdefault.jpg, https://i.ytimg.com/vi/C9nB4NITiII/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Mopepe - Benzoo, Bukzin Keyz &amp; Tango Supreme" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/mopepe-benzoo-bukzin-keyz-tango-supreme" rel="nofollow" title="Mopepe - Benzoo, Bukzin Keyz &amp; Tango Supreme">Mopepe - Benzoo, Bukzin Keyz &amp; Tango Supreme</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>2:42</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/mopepe-benzoo-bukzin-keyz-tango-supreme" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/LSF2aVlHHQs/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/LSF2aVlHHQs/mqdefault.jpg, https://i.ytimg.com/vi/LSF2aVlHHQs/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="ZEP (feat. Uncool MC) - DJ Smallz, Zinedine x Sguche &amp; 031 Choppa" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/zep-feat-uncool-mc-dj-smallz" rel="nofollow" title="ZEP (feat. Uncool MC) - DJ Smallz, Zinedine x Sguche &amp; 031 Choppa">ZEP (feat. Uncool MC) - DJ Smallz, Zinedine x Sguche &amp; 031 Choppa</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:24</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/zep-feat-uncool-mc-dj-smallz" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/RnMXa3f_fKU/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/RnMXa3f_fKU/mqdefault.jpg, https://i.ytimg.com/vi/RnMXa3f_fKU/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Fast Fast (feat. Roscosteazy &amp; Optimist Music ZA) - 031CHOPPA, Al Xapo &amp; Benzoo" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/fast-fast-feat-roscosteazy-optimist-music" rel="nofollow" title="Fast Fast (feat. Roscosteazy &amp; Optimist Music ZA) - 031CHOPPA, Al Xapo &amp; Benzoo">Fast Fast (feat. Roscosteazy &amp; Optimist Music ZA) - 031CHOPPA, Al Xapo &amp; Benzoo</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>2:20</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/fast-fast-feat-roscosteazy-optimist-music" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/aGqAWdgmUK0/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/aGqAWdgmUK0/mqdefault.jpg, https://i.ytimg.com/vi/aGqAWdgmUK0/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Mark Zuckerberg (feat. Slyzza Rsa) - Mulest Vankay, Pcee &amp; Scotts Maphuma" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/mark-zuckerberg-feat-slyzza-rsa-mulest" rel="nofollow" title="Mark Zuckerberg (feat. Slyzza Rsa) - Mulest Vankay, Pcee &amp; Scotts Maphuma">Mark Zuckerberg (feat. Slyzza Rsa) - Mulest Vankay, Pcee &amp; Scotts Maphuma</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:47</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/mark-zuckerberg-feat-slyzza-rsa-mulest" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/B12qTSkGmZw/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/B12qTSkGmZw/mqdefault.jpg, https://i.ytimg.com/vi/B12qTSkGmZw/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="uValo (feat. Dlala Thukzin) - Jazzworx, Thukuthela &amp; Babalwa M" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/uvalo-feat-dlala-thukzin-jazzworx-thukuthela" rel="nofollow" title="uValo (feat. Dlala Thukzin) - Jazzworx, Thukuthela &amp; Babalwa M">uValo (feat. Dlala Thukzin) - Jazzworx, Thukuthela &amp; Babalwa M</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:58</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/uvalo-feat-dlala-thukzin-jazzworx-thukuthela" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/wgGa9SgxhJI/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/wgGa9SgxhJI/mqdefault.jpg, https://i.ytimg.com/vi/wgGa9SgxhJI/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="SNOKONOKO (1+1 is 2 - King Blvcky Version) - Al Xapo, Benzoo &amp; EeQue" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/snokonoko-1-1-is-2-king" rel="nofollow" title="SNOKONOKO (1+1 is 2 - King Blvcky Version) - Al Xapo, Benzoo &amp; EeQue">SNOKONOKO (1+1 is 2 - King Blvcky Version) - Al Xapo, Benzoo &amp; EeQue</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:49</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/snokonoko-1-1-is-2-king" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/oT2xVM3wevo/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/oT2xVM3wevo/mqdefault.jpg, https://i.ytimg.com/vi/oT2xVM3wevo/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Botshelo Ke Eng - Trechyson Molly vx, DJ Promatic SA &amp; Dendofela" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/botshelo-ke-eng-trechyson-molly-vx" rel="nofollow" title="Botshelo Ke Eng - Trechyson Molly vx, DJ Promatic SA &amp; Dendofela">Botshelo Ke Eng - Trechyson Molly vx, DJ Promatic SA &amp; Dendofela</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:10</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/botshelo-ke-eng-trechyson-molly-vx" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/jqIWcQdxx08/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/jqIWcQdxx08/mqdefault.jpg, https://i.ytimg.com/vi/jqIWcQdxx08/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Gone Kanje (feat. Mellow &amp; Sleazy &amp; Dlala Regal) - Scotts Maphuma &amp; Slyzza Rsa" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/gone-kanje-feat-mellow-sleazy-dlala" rel="nofollow" title="Gone Kanje (feat. Mellow &amp; Sleazy &amp; Dlala Regal) - Scotts Maphuma &amp; Slyzza Rsa">Gone Kanje (feat. Mellow &amp; Sleazy &amp; Dlala Regal) - Scotts Maphuma &amp; Slyzza Rsa</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>6:22</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/gone-kanje-feat-mellow-sleazy-dlala" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/WnmgItmroVo/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/WnmgItmroVo/mqdefault.jpg, https://i.ytimg.com/vi/WnmgItmroVo/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Ningikhonzele - JAZZWRLD, Thatohatsi &amp; Thukuthela" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/ningikhonzele-jazzwrld-thatohatsi-thukuthela" rel="nofollow" title="Ningikhonzele - JAZZWRLD, Thatohatsi &amp; Thukuthela">Ningikhonzele - JAZZWRLD, Thatohatsi &amp; Thukuthela</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:47</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/ningikhonzele-jazzwrld-thatohatsi-thukuthela" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/rhMSDxr4q1U/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/rhMSDxr4q1U/mqdefault.jpg, https://i.ytimg.com/vi/rhMSDxr4q1U/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Rato Laka (feat. Slidoo Man) - Shebeshxt, Naqua SA &amp; Zee Nxumalo" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/rato-laka-feat-slidoo-man-shebeshxt" rel="nofollow" title="Rato Laka (feat. Slidoo Man) - Shebeshxt, Naqua SA &amp; Zee Nxumalo">Rato Laka (feat. Slidoo Man) - Shebeshxt, Naqua SA &amp; Zee Nxumalo</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>5:46</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/rato-laka-feat-slidoo-man-shebeshxt" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/t2_Y3Vq5yd4/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/t2_Y3Vq5yd4/mqdefault.jpg, https://i.ytimg.com/vi/t2_Y3Vq5yd4/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Bengicela (feat. Jazzworx) - MaWhoo, GL_Ceejay &amp; Thukuthela" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/bengicela-feat-jazzworx-mawhoo-gl-ceejay" rel="nofollow" title="Bengicela (feat. Jazzworx) - MaWhoo, GL_Ceejay &amp; Thukuthela">Bengicela (feat. Jazzworx) - MaWhoo, GL_Ceejay &amp; Thukuthela</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>3:48</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/bengicela-feat-jazzworx-mawhoo-gl-ceejay" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/hRr2UP8U1PE/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/hRr2UP8U1PE/mqdefault.jpg, https://i.ytimg.com/vi/hRr2UP8U1PE/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Shela (feat. Mano) - Sam Deep, Nia Pearl &amp; Boohle" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/shela-feat-mano-sam-deep-nia" rel="nofollow" title="Shela (feat. Mano) - Sam Deep, Nia Pearl &amp; Boohle">Shela (feat. Mano) - Sam Deep, Nia Pearl &amp; Boohle</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:19</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/shela-feat-mano-sam-deep-nia" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/qZDAVfG52jg/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/qZDAVfG52jg/mqdefault.jpg, https://i.ytimg.com/vi/qZDAVfG52jg/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Umaqondana - Feza" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/umaqondana-feza" rel="nofollow" title="Umaqondana - Feza">Umaqondana - Feza</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:32</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/umaqondana-feza" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/Lf9Q7_myCAw/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/Lf9Q7_myCAw/mqdefault.jpg, https://i.ytimg.com/vi/Lf9Q7_myCAw/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Sengithole Omunye - Feza" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/sengithole-omunye-feza" rel="nofollow" title="Sengithole Omunye - Feza">Sengithole Omunye - Feza</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:19</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/sengithole-omunye-feza" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/lZhc6BniJAQ/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/lZhc6BniJAQ/mqdefault.jpg, https://i.ytimg.com/vi/lZhc6BniJAQ/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Izospana (feat. Marvin) - Zuma, Thatohatsi &amp; Sam Deep" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/izospana-feat-marvin-zuma-thatohatsi-sam" rel="nofollow" title="Izospana (feat. Marvin) - Zuma, Thatohatsi &amp; Sam Deep">Izospana (feat. Marvin) - Zuma, Thatohatsi &amp; Sam Deep</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>7:24</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/izospana-feat-marvin-zuma-thatohatsi-sam" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/HgrR6XtP5IE/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/HgrR6XtP5IE/mqdefault.jpg, https://i.ytimg.com/vi/HgrR6XtP5IE/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Ama Baffalo Nama Elephant - LIMIT NALA" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/ama-baffalo-nama-elephant-limit-nala" rel="nofollow" title="Ama Baffalo Nama Elephant - LIMIT NALA">Ama Baffalo Nama Elephant - LIMIT NALA</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>5:00</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/ama-baffalo-nama-elephant-limit-nala" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/JnAGWLm9rvk/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/JnAGWLm9rvk/mqdefault.jpg, https://i.ytimg.com/vi/JnAGWLm9rvk/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Uyoncengwa Unyoko - Umafikizolo" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/uyoncengwa-unyoko-umafikizolo" rel="nofollow" title="Uyoncengwa Unyoko - Umafikizolo">Uyoncengwa Unyoko - Umafikizolo</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:20</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/uyoncengwa-unyoko-umafikizolo" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/l0AHt0UF3V8/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/l0AHt0UF3V8/mqdefault.jpg, https://i.ytimg.com/vi/l0AHt0UF3V8/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Abantwana Bakho (feat. Thatohatsi, Young Stunna &amp; Nkosazana Daughter) - DJ Maphorisa, Xduppy &amp; Kabza De Small" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/abantwana-bakho-feat-thatohatsi-young-stunna" rel="nofollow" title="Abantwana Bakho (feat. Thatohatsi, Young Stunna &amp; Nkosazana Daughter) - DJ Maphorisa, Xduppy &amp; Kabza De Small">Abantwana Bakho (feat. Thatohatsi, Young Stunna &amp; Nkosazana Daughter) - DJ Maphorisa, Xduppy &amp; Kabza De Small</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:57</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/abantwana-bakho-feat-thatohatsi-young-stunna" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/tljS94eB0QU/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/tljS94eB0QU/mqdefault.jpg, https://i.ytimg.com/vi/tljS94eB0QU/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="UKHETHE MINA - Ntencane" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/ukhethe-mina-ntencane" rel="nofollow" title="UKHETHE MINA - Ntencane">UKHETHE MINA - Ntencane</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>5:21</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/ukhethe-mina-ntencane" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/sel1mCYFJ8U/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/sel1mCYFJ8U/mqdefault.jpg, https://i.ytimg.com/vi/sel1mCYFJ8U/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Isaka (6am) (6am) (feat. Jazzworx &amp; Thukuthela) - Ciza" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/isaka-6am-6am-feat-jazzworx-thukuthela" rel="nofollow" title="Isaka (6am) (6am) (feat. Jazzworx &amp; Thukuthela) - Ciza">Isaka (6am) (6am) (feat. Jazzworx &amp; Thukuthela) - Ciza</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:02</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/isaka-6am-6am-feat-jazzworx-thukuthela" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/vuPcPPGlwrw/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/vuPcPPGlwrw/mqdefault.jpg, https://i.ytimg.com/vi/vuPcPPGlwrw/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Biri Marung (Edit) (feat. Sje Konka, Focalistic, DJ Maphorisa &amp; Scotts Maphuma) - Mr Pilato, Ego Slimflow &amp; Tebogo G Mashego" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/biri-marung-edit-feat-sje-konka" rel="nofollow" title="Biri Marung (Edit) (feat. Sje Konka, Focalistic, DJ Maphorisa &amp; Scotts Maphuma) - Mr Pilato, Ego Slimflow &amp; Tebogo G Mashego">Biri Marung (Edit) (feat. Sje Konka, Focalistic, DJ Maphorisa &amp; Scotts Maphuma) - Mr Pilato, Ego Slimflow &amp; Tebogo G Mashego</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:47</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/biri-marung-edit-feat-sje-konka" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/v2uTRicpN9s/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/v2uTRicpN9s/mqdefault.jpg, https://i.ytimg.com/vi/v2uTRicpN9s/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Thandaza - Sam Deep &amp; Thatohatsi" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/thandaza-sam-deep-thatohatsi" rel="nofollow" title="Thandaza - Sam Deep &amp; Thatohatsi">Thandaza - Sam Deep &amp; Thatohatsi</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>6:23</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/thandaza-sam-deep-thatohatsi" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/QmmOjFp-8BA/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/QmmOjFp-8BA/mqdefault.jpg, https://i.ytimg.com/vi/QmmOjFp-8BA/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Anginayo Imali - Cardinal X25 &amp; HBK Live Act" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/anginayo-imali-cardinal-x25-hbk-live" rel="nofollow" title="Anginayo Imali - Cardinal X25 &amp; HBK Live Act">Anginayo Imali - Cardinal X25 &amp; HBK Live Act</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:50</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/anginayo-imali-cardinal-x25-hbk-live" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+          <div class="group relative flex items-center gap-4 bg-white p-4 shadow dark:bg-gray-800 sm:rounded-md">
+            <div class="w-24 md:w-36">
+              <div class="relative rounded-md bg-black pb-[75%]"><img class="lazy absolute left-0 top-0 h-full w-full rounded-md object-contain group-hover:opacity-80" data-src="https://i.ytimg.com/vi/kgqi8rgc-fU/mqdefault.jpg" data-srcset="https://i.ytimg.com/vi/kgqi8rgc-fU/mqdefault.jpg, https://i.ytimg.com/vi/kgqi8rgc-fU/hqdefault.jpg 2x" src="https://tubidy.llc/images/blank.png" alt="Stofi Stofoza - PLG Chanty &amp; King Master" width="144" height="108"></div>
+            </div>
+            <div class="flex-1 md:p-2">
+              <h2 class="mb-1 md:mb-3"><a class="line-clamp-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:content-[''] hover:text-sky-400 md:text-xl" href="https://tubidy.llc/search/stofi-stofoza-plg-chanty-king-master" rel="nofollow" title="Stofi Stofoza - PLG Chanty &amp; King Master">Stofi Stofoza - PLG Chanty &amp; King Master</a></h2>
+              <div class="flex items-center gap-2"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                  <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                </svg> <span>4:30</span> <span class="mx-2 text-gray-400">|</span> <a class="relative inline-flex hover:text-sky-400" href="whatsapp://send?text=https://tubidy.llc/search/stofi-stofoza-plg-chanty-king-master" aria-label="Send to WhatsApp"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                  </svg></a></div>
+            </div><svg class="-mx-[5px] h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17" />
+            </svg>
+          </div>
+        </div>
+        <div class="-mx-6 mt-12 border border-gray-300 bg-white px-6 py-8 dark:border-transparent dark:bg-gray-800 md:mx-0 md:rounded-md md:p-8">
+          <div class="content -my-1.5">
+            <h1 style="margin-top:-0.125rem;font-size:2rem;line-height:2.25rem;font-weight:600;">Tubidy - MP3 & MP4 Downloads | Free Unlimited Music & Videos Online</h1>
+            <p><span style="text-decoration: underline;"><strong><a title="Tubidy" href="/">Tubidy</a></strong></span> is a popular online platform offering a large library of MP3 songs and MP4 videos for quick, no-signup access. Its simple interface makes it easy to find media and convert linked videos (such as from YouTube) to MP3 or MP4 formats fast.</p>
+            <p>Whether you're on a phone, tablet, or computer, <strong>Tubidy</strong> is designed to work across common devices and browsers for a smooth listening and viewing experience. Use the search bar below to get started, and please respect copyright and legal guidelines when downloading content.</p>
+            <h2>Introduction to Tubidy</h2>
+            <p>Welcome to <strong>Tubidy</strong>, a simple, no-signup way to search and access music and videos online. Tubidy acts as an index and link-finder for media hosted on other platforms, so users can quickly locate tracks and download or stream them for offline use.</p>
+            <p>Designed for everyday music listeners, Tubidy is handy for commuting, saving mobile data, or building a personal collection of free music. Its interface gives fast access across phones, tablets, and computers so you can find content wherever you are.</p>
+            <p>With a broad catalog of songs and videos across genres, Tubidy makes discovery easy: type a title or artist into the search bar, browse results, and pick the format you need. It&rsquo;s a practical choice for users who want quick access and flexible ways to enjoy music and video content.</p>
+            <h2>Features and Benefits of Using Tubidy</h2>
+            <p>Tubidy makes finding and saving music and videos straightforward, ideal for users who want quick access without extra steps. Below are the key features that make Tubidy useful for casual listeners and frequent downloaders alike.</p>
+            <h3>User-Friendly Interface</h3>
+            <p>The interface is built for simplicity: search, preview, and download. Even non-technical users can locate MP3 tracks or MP4 videos in seconds and choose the format they need.</p>
+            <h3>Regular Updates</h3>
+            <p>The catalog is refreshed often so you can find recent releases alongside older favorites. Regular updates help keep search results relevant and improve the overall discovery experience.</p>
+            <h3>Use Without Registration</h3>
+            <p>Many core features are available without creating an account, so you can start a mobile music download or save videos right away. This lowers the barrier for users who need fast offline access.</p>
+            <h3>Free Downloads &amp; Access</h3>
+            <p>Tubidy provides free access to a broad selection of tracks and videos. While availability can vary by source and region, users can often build a sizable personal library without paying.</p>
+            <h3>High-Quality Downloads</h3>
+            <p>Quality options are usually available so you can balance sound or picture clarity with file size. For audio, that might mean choosing between lower-bitrate files (smaller size) and higher-bitrate MP3s for better fidelity.</p>
+            <h3>Multiple Formats Support</h3>
+            <p>Tubidy supports common formats so downloads work across devices. Typical options include MP3 for audio and MP4 for video; other containers (M4A, WebM) may appear depending on the source. Choose the format that matches your device or player.</p>
+            <h3>Fast Download Speed</h3>
+            <p>The service aims to minimize wait times so you get downloads quickly. Speed can depend on your connection and the source server, so choosing lower-quality files or using Wi-Fi can improve download times.</p>
+            <h3>Mobile Compatibility</h3>
+            <p>Designed with mobile users in mind, Tubidy&rsquo;s workflow is optimized for phones and tablets: search on the go, select the format, and save to your device. This makes it easy to enjoy music and videos offline during commuting or when conserving mobile data.</p>
+            <p>Quick tip: use the search bar to find a track, preview the result, then select the desired format and download to save for offline listening or viewing.</p>
+            <h2>Exploring Tubidy's Music Library</h2>
+            <p>Tubidy&rsquo;s library offers a broad catalog of music and music videos spanning genres and eras, so you can find both recent hits and classic tracks. The platform aggregates results from many sources, making discovery fast whether you&rsquo;re hunting for a trending single or a vintage favorite.</p>
+            <p>Users can quickly locate new MP3 songs for download or revisit old favorites using simple search queries. Results often include multiple versions or uploads of the same track, giving you format and quality choices when you download.</p>
+            <p>From pop and rock to jazz and classical, Tubidy carries a wide range of songs and music videos. Curated playlists and popular charts (when available) help surface trending hits, while genre filters make it easier to explore specific styles.</p>
+            <p>How to discover music: type an artist or song into the search bar, review the results and previews, then choose the format and quality you want. This straightforward flow turns browsing Tubidy&rsquo;s catalog into a smooth musical journey for casual listeners and collectors alike.</p>
+            <h2>Tubidy MP3 Download: How to Get Started</h2>
+            <p>Starting a <em>tubidy mp3 download</em> is straightforward. Use the search bar to find a track by song title or artist, Tubidy returns matching results so you can pick the exact version you want.</p>
+            <p>Follow these simple steps to save audio for offline listening:</p>
+            <p>1. Enter the song title or artist in the search bar and press search. 2. Review the results and use previews (if available) to confirm the correct track. 3. Select the desired audio format and quality&mdash;options often include low/medium/high or common MP3 bitrates&mdash;balancing audio fidelity with file size. 4. Click the download button to save the file to your device.</p>
+            <p>Most users find the process works the same on desktop and mobile: search, choose, and download. If you have a slow connection, pick a lower-quality MP3 to reduce file size and speed up the download. For best results, use a stable internet connection and check the file in your preferred audio player after download.</p>
+            <h2>Efficiency of Tubidy MP4 Download</h2>
+            <p>Tubidy is a practical choice for reliable and efficient video downloads, especially when you need MP4 files that play across devices. The service offers versatility in formats and quality tiers so users can pick the best file type and resolution for their device and data needs.</p>
+            <h3>Versatility in Formats</h3>
+            <p><strong>Tubidy mp4 download</strong> typically provides common containers (MP4 being the most widespread) and may surface alternative formats depending on the source. That flexibility helps ensure downloaded videos work on phones, tablets, and desktop players without extra conversion.</p>
+            <h3>High-Definition Quality</h3>
+            <p>Quality options often range from lower resolutions for small screens and limited data to higher-definition choices (for example, 480p, 720p, or 1080p when available). Choose a higher resolution for clearer playback on larger displays, or pick a lower resolution to save storage and bandwidth.</p>
+            <h3>User Convenience</h3>
+            <p>The download process is designed to be straightforward: search for a video, preview if available, choose the desired mp4 format and resolution, then download. Keep in mind that higher-quality mp4 video files will be larger and take longer to download, so consider file size and your internet speed when selecting options.</p>
+            <h2>Popular Music Genres on Tubidy</h2>
+            <p>Tubidy carries a wide range of music, so you can find tracks from both local and international scenes. Whether you want current chart hits or regional favorites, Tubidy offers selections across many styles to suit different tastes.</p>
+            <h3>Pop</h3>
+            <p>Find mainstream pop songs and chart-topping hits from well-known artists. Tubidy MP3 downloads make it simple to save your favorite pop tracks for offline listening.</p>
+            <h3>Amapiano</h3>
+            <p><strong>Amapiano</strong>, a genre that blends house rhythms with jazz and soulful elements, is well represented. Browse popular Amapiano playlists or search for trending tracks to sample the sound.</p>
+            <h3>South African Music</h3>
+            <p>Explore South African styles from traditional maskandi to energetic <strong>Gqom</strong> beats. Tubidy offers a selection that highlights the country&rsquo;s musical diversity and cultural sounds.</p>
+            <h3>Afrobeats</h3>
+            <p>Afrobeats mixes highlife, funk, and contemporary pop for upbeat, danceable tracks. You&rsquo;ll find many Afrobeats songs and playlists that capture the genre&rsquo;s infectious rhythms.</p>
+            <h3>Afropop</h3>
+            <p>Afropop blends modern production with African musical elements. Tubidy provides access to recent Afropop releases alongside notable older tracks.</p>
+            <h3>Hip Hop</h3>
+            <p>The hip hop section includes classic anthems and fresh releases from emerging artists. Use the search bar to find specific songs, artists, or popular hip hop hits.</p>
+            <h3>Gospel</h3>
+            <p>Looking for inspirational or worship music? Tubidy&rsquo;s gospel collection features contemporary Christian songs and traditional hymns for spiritual listening.</p>
+            <h3>K-pop</h3>
+            <p>K-pop fans can discover a wide selection of Korean pop tracks, from viral hits to full albums. Browse by artist or search for the latest K-pop releases to stay up to date.</p>
+            <p>Tip: to explore a genre quickly, search for the genre name plus &ldquo;hits&rdquo; or &ldquo;top&rdquo; (for example, &ldquo;Amapiano hits&rdquo;) to surface popular playlists and trending songs. Tubidy&rsquo;s catalog gives you the choice to sample different artists and styles without much hassle.</p>
+            <h2>Device Compatibility for Tubidy Downloads</h2>
+            <p>Tubidy is built to be accessible across a wide range of devices so you can download and play music and videos wherever you are. Whether you use a smartphone, tablet, or computer, the mobile-optimized site works in common browsers and makes mobile music downloads straightforward.</p>
+            <p>Typical setups that work well include Chrome or Firefox on Android, Safari on iOS, and modern desktop browsers on Windows or macOS. For video playback, MP4 downloads are widely compatible with smart TVs and many media players; MP3 is the best choice for audio players and in-car systems.</p>
+            <p>If you run into issues, try these simple fixes: clear your browser cache, switch to a different browser, ensure you have enough storage, or use Wi‑Fi for large mp4 downloads. Also consider choosing a lower-resolution format to save space and speed up downloads on slower connections.</p>
+            <p>By supporting common formats and browsers, Tubidy aims to give users easy access to music and videos on the devices they already use, helping you enjoy content across phones, tablets, desktops, and many media players.</p>
+            <h2>Understanding the Legal Aspects of Tubidy</h2>
+            <p>Tubidy indexes and links to media found on other platforms, which makes it easy for users to locate music and videos. However, linking to content is different from having licensed rights to distribute it, and that distinction has legal implications users should understand.</p>
+            <h3>Legal Risks</h3>
+            <p>Downloading copyrighted songs or videos without permission can carry legal risks. Depending on your country&rsquo;s laws, unauthorized downloads may violate copyright and could lead to takedown notices or other actions. This section is informational and not legal advice, when in doubt, consult official guidance in your region.</p>
+            <h3>User Responsibility</h3>
+            <p>Users are responsible for ensuring the content they download is legally available. To reduce risk, prefer content from verified channels or official artist pages, use licensed streaming services when possible, and avoid downloading material that appears to be clearly infringing.</p>
+            <h3>Content Sourcing</h3>
+            <p>Because Tubidy aggregates results from various sources, check each result before downloading: look for official uploaders or links to reputable platforms, review metadata (uploader name, description), and prefer items that reference the artist&rsquo;s or label&rsquo;s official page. If you encounter questionable content, avoid downloading it and report it where applicable.</p>
+            <p>For more details on acceptable use and takedown procedures, review the site&rsquo;s terms of use or help pages if available. Responsible use helps protect artists and keeps the online music ecosystem fair while giving users safe access to content.</p>
+            <h2>How Tubidy Keeps Your Downloads Fast and Efficient</h2>
+            <p>Tubidy aims to deliver quick, reliable downloads so you can get music and videos with minimal wait. The platform optimizes delivery paths and uses techniques such as caching and distributed servers to reduce load times and improve the user experience under normal conditions.</p>
+            <p>What helps speed up downloads in practice: content is served from multiple sources when available, and common files are cached to cut round-trip time. These optimizations mean many users can download simultaneously without a big slowdown, though actual speeds depend on the source server and your connection.</p>
+            <p>Practical tips to maximize download performance: choose a lower-quality file when on slow mobile data, switch to Wi‑Fi for large mp4 downloads, and close background apps that use bandwidth. If a download stalls, try a different result in the search results or retry after clearing your browser cache.</p>
+            <p>Tubidy&rsquo;s focus on efficient delivery and routine maintenance helps keep downloads smooth for most users. If you experience repeated slowdowns, check your internet connection, try another browser, or select a smaller format to improve speed and reliability.</p>
+            <h2>Why Tubidy is the Go-To Platform for Mobile Downloads</h2>
+            <p>With smartphones and tablets at the center of daily life, having a reliable way to download music on the go matters. <strong>Tubidy mobile</strong> is built as a mobile-optimized platform that makes searching for, previewing, and saving songs and videos simple, so you can grab content anytime, anywhere.</p>
+            <h3>Convenient Mobile Interface</h3>
+            <p>The mobile interface focuses on speed and clarity: a clear search box, straightforward results, and easy format choices let even non-technical users download MP3 or MP4 files quickly. That streamlined design helps keep the experience smooth when you&rsquo;re commuting or saving data.</p>
+            <h3>Compatibility with Various Mobile Devices</h3>
+            <p><strong>Tubidy mobile</strong> works in modern mobile browsers (for example, Chrome on Android and Safari on iOS) and supports common formats so downloads play in most music and video apps. For large mp4 downloads, use Wi‑Fi and check available storage; for audio-only use MP3 to save space.</p>
+            <p>Quick tips for mobile users: free up storage before big downloads, choose lower-quality files when on limited data, and try downloading a short clip first to test compatibility. Try a quick search on your phone to see how fast a sample mp4 or mp3 download completes.</p>
+            <h2>Advantages of Using Tubidy for Offline Listening</h2>
+            <p>Tubidy makes it easy to save music and videos for offline use, so you can enjoy your favorite songs without an internet connection. This is useful when commuting, traveling, or trying to save mobile data.</p>
+            <p>Downloading music and mp4 videos to your device helps you build a personal library you can play anytime. Most downloads save as common file types (MP3 for audio, MP4 for video) that work with native music players, media apps, and many in‑car systems&mdash;so you won&rsquo;t need special software to listen.</p>
+            <p>To balance storage and quality, choose lower-bitrate MP3s (smaller files) for long playlists or higher-bitrate files for critical listening. For videos, pick a lower resolution for phone viewing and a higher resolution (if available) for larger screens. Organize downloads into folders or playlists on your device to keep songs easy to find.</p>
+            <h2>Tubidy: Your Source for Trendy and Classic Music</h2>
+            <p>Tubidy connects music lovers with a broad mix of styles, making it easy to find both trendy music downloads and classic tracks in one place. Whether you&rsquo;re hunting for the latest chart toppers or a well‑loved album from the past, Tubidy&rsquo;s catalog offers options across eras and genres.</p>
+            <p>Discovering new vs. classic is simple: try searching for &ldquo;top,&rdquo; &ldquo;hits,&rdquo; or a specific year or artist to surface current playlists and older favorites. The site typically provides multiple format choices (for example, MP3 for audio and MP4 for video) so you can pick the best option for listening on your preferred device.</p>
+            <p>Music tastes vary, and Tubidy reflects that with selections ranging from rock and jazz to hip‑hop and classical. Use curated playlists or topic searches to explore focused collections&mdash;think &ldquo;classic rock hits&rdquo; for older favorites or &ldquo;today&rsquo;s pop hits&rdquo; for current songs.</p>
+            <p>For users who want flexible formats, Tubidy supports common downloads like mp3 and mp4 so you can download music and music mp4 videos that play across devices. Choose higher‑quality files when you want better fidelity, or select smaller mp3 files to save space. With this balance of choice and format support, Tubidy makes it easy to enjoy free music and build a personal collection that fits your listening needs.</p>
+            <h2>Safe and Secure Music Downloads with Tubidy</h2>
+            <p>Tubidy aims to reduce risks for users, but it&rsquo;s important to be practical about safety. Because the service aggregates links to media from various sources, users should assume some responsibility for verifying files before opening them.</p>
+            <p>Security practices to keep in mind: scan downloaded files with an up‑to‑date antivirus program, keep your device and apps patched, and avoid running unknown executables. While the site may implement measures to limit harmful content, local scanning adds an extra layer of protection for your device.</p>
+            <p>Regarding privacy, Tubidy typically allows access without creating an account, which means less personal information is required to use basic features. However, like many sites, it may use cookies or analytics to improve the user experience, check the site&rsquo;s privacy policy for details on data collection and settings.</p>
+            <p>Practical tips: prefer downloads from clearly identified or official channels, preview files when possible, and choose common formats (MP3/MP4) that are widely supported by media players. If you see suspicious or poorly labeled results in search results, skip them and try another source. These steps help you enjoy music and video downloads while minimizing security and privacy risks.</p>
+            <h2>How Tubidy Stays Ahead in the Music Download Market</h2>
+            <p>Tubidy keeps improving by updating its platform and following trends in how people find and save music. Rather than claiming unmatched superiority, the site focuses on practical enhancements&mdash;improved search results, added format support, and interface tweaks&mdash;that make the user experience smoother over time.</p>
+            <p>What to expect: regular tweaks to search relevance and results, broader format compatibility so you can choose mp3 or mp4 more easily, and design updates that simplify finding and downloading content. These incremental changes help users get faster access to the content they want while supporting multiple device types.</p>
+            <p>Looking ahead, Tubidy aims to continue adapting to new music styles and user needs by monitoring popular content and updating available formats and delivery options. If you value quick access to a wide range of music and videos, try a quick search now to see current results and available download formats.</p>
+            <p>Note: always respect copyright and use licensed sources where required&mdash;responsible downloading supports artists and keeps the platform accessible for everyone.</p>
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <h3>What is Tubidy and how does it work?</h3>
+            <p>Tubidy is a free online platform for music and video streaming and downloading. It aggregates content from the internet and provides direct download links. You don't need to register to use it, making it easy for everyone to access.</p>
+            <h3>Is Tubidy legal to use in South Africa?</h3>
+            <p>Tubidy's legality in South Africa is a gray area. Downloading content for personal use might be okay, but it's important to respect artists' rights. We suggest using Tubidy responsibly and supporting artists through legitimate platforms.</p>
+            <h3>How do I download MP3 files from Tubidy?</h3>
+            <p>To download MP3s from Tubidy, search for music, select a song, and click the download button. Choose your quality and the file will download. You can use a direct download or a download manager for better control.</p>
+            <h3>Can I download South African music like Amapiano on Tubidy?</h3>
+            <p>Yes, Tubidy has a wide range of South African music, including Amapiano. You can find music by searching for genres or artists. The platform regularly updates with new local music.</p>
+            <h3>How do I download MP4 videos from Tubidy?</h3>
+            <p>To download MP4 videos, search for the video, select it, and choose your quality. Click the download button, and the video will start downloading. Remember, higher quality videos use more space and data.</p>
+            <h3>Does Tubidy work on both mobile phones and computers?</h3>
+            <p>Yes, Tubidy works on mobile devices and desktop computers. On mobile, it's easy to use with touch controls. On desktop, it works with all major browsers, offering consistent functionality.</p>
+            <h3>How can I save data when using Tubidy in South Africa?</h3>
+            <p>To save data, download content on Wi-Fi and choose lower quality options. Downloading in bulk during off-peak hours helps too. Some networks offer special data bundles for streaming.</p>
+            <h3>Is Tubidy safe to use, or does it contain viruses?</h3>
+            <p>Tubidy is generally safe, but be cautious. Use updated antivirus software and avoid suspicious ads. Download files only from official buttons to stay safe.</p>
+            <h3>What should I do if my Tubidy downloads keep failing?</h3>
+            <p>If downloads fail, check your internet connection. Try switching between mobile data and Wi-Fi. Clear your browser cache and cookies. Use a download manager for interrupted downloads. For network issues, try downloading at off-peak hours.</p>
+            <h3>What are the alternatives to Tubidy for downloading music in South Africa?</h3>
+            <p>Alternatives include MP3Juices, GenYoutube, and SoundCloud for free. Premium services like Spotify, Apple Music, and YouTube Music offer high-quality streaming and downloads. These services support artists and offer curated playlists.</p>
+            <h3>How do I play my downloaded Tubidy files on different devices?</h3>
+            <p>MP3 files play on most media players. For MP4 videos, VLC Media Player is recommended. If you face compatibility issues, convert the file format using tools like HandBrake. Transfer files between devices using cloud storage, USB, or Bluetooth.</p>
+            <h3>Does Tubidy require registration or payment?</h3>
+            <p>No, Tubidy doesn't require registration or payment. It's completely free to use, but you'll see ads. This makes it accessible to everyone without any cost.</p>
+            <h3>How often is content updated on Tubidy?</h3>
+            <p>Tubidy updates its content library regularly. It includes new releases and trending music and videos. This includes South African content like Amapiano and music videos from local artists.</p>
+            <h3>Will Tubidy work on slow internet connections in rural South Africa?</h3>
+            <p>Tubidy works on slow connections, but with limitations. Choose lower quality options to save bandwidth. The simple interface loads faster than complex sites. For very slow connections, use a download manager.</p>
+            <h4><em>Tubidy, Tubidy Mp3, Tubidy Mp3 Download</em></h4>
+          </div>
+        </div>
+      </div>
+    </main>
+    <nav class="bg-white px-6 dark:bg-gray-800">
+      <ul class="container mx-auto flex flex-wrap justify-center gap-x-6 py-4">
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/about/">About</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/faq/">FAQ</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/dmca/">DMCA</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/disclaimer/">Disclaimer</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/privacy/">Privacy</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/terms/">Terms</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/page/contact/">Contact</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc/article/" target="_blank">Article</a></li>
+        <li><a class="block py-1.5 text-sky-400 hover:text-sky-600 md:py-2.5" href="https://tubidy.llc">Tubidy</a></li>
+      </ul>
+    </nav>
+    <div class="container mx-auto py-[26px] text-center">&copy; 2009-2026 Tubidy</div>
+    <script src="https://tubidy.llc/noback.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3R1MECFX9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-J3R1MECFX9');
+
+    </script>
+    <script>
+      (function() {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement('script');
+            d.innerHTML = "window.__CF$cv$params={r:'a1e44e16ffd5954b',t:'MTc4NDU3NTAzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName('head')[0].appendChild(d)
+          }
+        }
+        if (document.body) {
+          var a = document.createElement('iframe');
+          a.height = 1;
+          a.width = 1;
+          a.style.position = 'absolute';
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = 'none';
+          a.style.visibility = 'hidden';
+          document.body.appendChild(a);
+          if ('loading' !== document.readyState) c();
+          else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+          else {
+            var e = document.onreadystatechange || function() {};
+            document.onreadystatechange = function(b) {
+              e(b);
+              'loading' !== document.readyState && (document.onreadystatechange = e, c())
+            }
+          }
+        }
+      })();
+
+    </script>
+  </body>
+</html>
