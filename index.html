@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas. Shijoni muzikë MP3 320kbps teat cilësisë së lartë.">
+    <meta name="robots" content="index, follow">
+    <title>Tubidy - Shkarkime MP3 & MP4 | Muzikë dhe Video Falas Online</title>
+    
+    <meta property="og:locale" content="sq_AL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tubidy - Shkarkime MP3 & MP4">
+    <meta property="og:description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas.">
+    <meta property="og:url" content="https://tubidy.llc">
+    <meta property="og:site_name" content="Tubidy">
+    <meta property="og:image" content="https://tubidy.llc">
+    <link href="https://tubidy.llc" rel="canonical">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Butoni për Dark Mode -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Ndrysho temën">🌓</button>
+
+    <header>
+      <img src="https://tubidy.llc" alt="Tubidy Logo" class="logo">
+      <h1>Kërko Muzikë dhe Video</h1>
+    </header>
+
+    <main>
+      <form id="searchForm" class="search-form">
+        <input type="text" id="searchInput" placeholder="Shkruaj artistin, këngën ose videon..." required autocomplete="off" class="search-input">
+        <button type="submit" class="search-button">Kërko</button>
+      </form>
+
+      <section id="resultsSection" class="media-section hidden">
+        <h2 id="resultsTitle">Rezultatet e kërkimit</h2>
+        <div id="resultsList" class="songs-list"></div>
+      </section>
+
+      <section id="trendingSection" class="media-section">
+        <h2>🔥 Këngët më të dëgjuara (Trending)</h2>
+        <div id="trendingList" class="songs-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
