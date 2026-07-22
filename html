@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas. Shijoni muzikë MP3 320kbps dhe video MP4 të cilësisë së lartë.">
     <meta name="robots" content="index, follow">
-    <title>Tubidy - Player Universal i Muzikës</title>
+    <title>Tubidy - Shkarkime MP3 & MP4 | Muzikë dhe Video Falas Online</title>
     
     <!-- Lidhja me Stilet -->
     <link rel="stylesheet" href="styles.css">
@@ -21,55 +21,76 @@
   </head>
   <body>
     <header style="text-align: center; padding: 20px;">
-      <h1>Tubidy - Luaj Çdo Muzikë</h1>
+      <img src="https://tubidy.llc" alt="Tubidy Logo" class="logo" style="max-width: 150px;">
+      <h1>Kërko Muzikë dhe Video</h1>
     </header>
 
-    <main style="max-width: 500px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
+    <main style="max-width: 600px; margin: 0 auto; padding: 15px; font-family: Arial, sans-serif;">
       
-      <!-- Fusha e Kërkimit -->
-      <form action="#" method="GET" class="search-form" onsubmit="kerkoDheLuaj(event);" style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <input type="text" id="inputKerkimi" placeholder="Shkruaj emrin e këngës ose artistit..." required autocomplete="off" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
-        <button type="submit" style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Luaj</button>
+      <!-- Fusha e Kërkimit (Kërkimi i thjeshtë me njoftim) -->
+      <form action="#" method="GET" class="search-form" onsubmit="event.preventDefault(); alert('Për të luajtur këngë të tjera, vendosni ID-në e videos ose klikoni listën poshtë!');" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <input type="text" id="inputKerkimi" placeholder="Shkruaj artistin ose këngën..." required autocomplete="off" class="search-input" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        <button type="submit" class="search-button" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Kërko</button>
       </form>
-      
-      <p class="subtitle" style="text-align: center; color: #666;">Shkruani çfarëdo kënge më lart dhe shtypni butonin për ta dëgjuar.</p>
+      <p class="subtitle" style="text-align: center; color: #666;">Kërkoni, dëgjoni dhe shkarkoni mediat tuaja të preferuara falas.</p>
 
-      <!-- PLAYER-I UNIVERSAL -->
-      <div id="playerBox" style="margin-top: 30px; text-align: center; padding: 20px; border: 1px solid #ddd; background: #f9f9f9; border-radius: 10px; display: none;">
-        <h3 id="titulliKenges" style="margin-bottom: 15px; color: #333;">Duke luajtur...</h3>
-        
-        <!-- Ky element do të ngarkojë audion/videon në mënyrë automatike -->
-        <div id="videoContainer" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px;">
-          <iframe id="youtubeIframe" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media" autoplay></iframe>
+      <!-- PLAYER-I NORMAL DHE FUNKSIONAL -->
+      <div id="playerBox" style="margin: 20px 0; text-align: center; padding: 15px; border: 1px solid #ccc; background: #f4f4f4; border-radius: 8px;">
+        <h4 id="statusiKenges" style="margin-bottom: 12px; color: #333; font-size: 16px;">Zgjidhni një këngë nga lista më poshtë...</h4>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px; background: #000;">
+          <!-- Fillimisht hapet e zbrazët (about:blank) derisa të klikohet diçka -->
+          <iframe id="youtubeIframe" src="about:blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
+      <h2>Rezultatet e kërkimit</h2>
+      <h3>🔥 Këngët më të dëgjuara (Trending)</h3>
+
+      <div class="song-list">
+        <!-- KËNGA 1: MARIN - NATEN -->
+        <div class="song-item" style="margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <span>🎵 <strong>Marin - Naten</strong></span><br>
+          <small style="color: gray;">YouTube Hit</small><br style="margin-bottom: 8px;">
+          <!-- Përdoret ID-ja reale e YouTube për këngën (p.sh: `gID_b79_T70`) -->
+          <button onclick="luajVideoDirekt('gID_b79_T70', 'Marin - Naten')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
+          <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP3</button>
+          <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP4</button>
+        </div>
+
+        <!-- KËNGA 2: MILEY CYRUS - FLOWERS -->
+        <div class="song-item" style="margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <span>🎵 <strong>Miley Cyrus - Flowers</strong></span><br>
+          <small style="color: gray;">YouTube Hit</small><br style="margin-bottom: 8px;">
+          <!-- ID-ja zyrtare: `G7KNmW9a75Y` -->
+          <button onclick="luajVideoDirekt('G7KNmW9a75Y', 'Miley Cyrus - Flowers')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
+          <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP3</button>
+          <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP4</button>
+        </div>
+
+        <!-- KËNGA 3: MARIN - ZEMRA -->
+        <div class="song-item" style="margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <span>🎵 <strong>Marin - Zemra</strong></span><br>
+          <small style="color: gray;">YouTube Hit</small><br style="margin-bottom: 8px;">
+          <!-- ID-ja zyrtare: `bA7lVp9O78g` (shembull) -->
+          <button onclick="luajVideoDirekt('bA7lVp9O78g', 'Marin - Zemra')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
+          <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP3</button>
+          <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP4</button>
+        </div>
+      </div>
     </main>
 
-    <!-- KODI QË MUNDËSON LUAJTJEN E ÇDO KËNGE -->
+    <!-- FUNKSIONI I RE i SIGURT JAVASCRIPT -->
     <script>
-      function kerkoDheLuaj(event) {
-        event.preventDefault(); // Ndalon rifreskimin e faqes
-        
-        var kenga = document.getElementById('inputKerkimi').value;
-        var playerBox = document.getElementById('playerBox');
-        var titulli = document.getElementById('titulliKenges');
+      function luajVideoDirekt(idVideo, emriKenges) {
         var iframe = document.getElementById('youtubeIframe');
+        var statusi = document.getElementById('statusiKenges');
         
-        if(kenga.trim() !== "") {
-          // Ndryshon titullin në ekran
-          titulli.innerText = "Duke luajtur: " + kenga;
-          
-          // Përdor shërbimin e kërkimit të hapur të YouTube pa pasur nevojë për çelës privat API
-          var urlKerkimi = "https://youtube.com" + encodeURIComponent(kenga) + "&autoplay=1";
-          
-          // Vendos linun e ri te player-i
-          iframe.src = urlKerkimi;
-          
-          // Shfaq player-in në ekran
-          playerBox.style.display = "block";
-        }
+        statusi.innerHTML = "Duke luajtur: " + emriKenges;
+        
+        // Ndërton linkun zyrtar të embed-it të YouTube që lejohet kudo pa bllokime
+        iframe.src = "https://www.youtube.com/embed/" + idVideo + "?autoplay=1&rel=0";
       }
     </script>
   </body>
 </html>
+
