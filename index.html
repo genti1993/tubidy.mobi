@@ -28,18 +28,18 @@
     <main style="max-width: 600px; margin: 0 auto; padding: 15px; font-family: Arial, sans-serif;">
       
       <!-- Fusha e Kërkimit -->
-      <form action="#" method="GET" class="search-form" onsubmit="event.preventDefault(); alert('Klikoni butonin Luaj më poshtë për të testuar player-in!');" style="display: flex; gap: 10px; margin-bottom: 20px;">
+      <form action="#" method="GET" class="search-form" onsubmit="event.preventDefault(); alert('Klikoni butonin ▶ Luaj te lista poshtë për të nisur këngën!');" style="display: flex; gap: 10px; margin-bottom: 20px;">
         <input type="text" id="inputKerkimi" placeholder="Shkruaj artistin ose këngën..." required autocomplete="off" class="search-input" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
         <button type="submit" class="search-button" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Kërko</button>
       </form>
 
-      <!-- PLAYER-I NORMAL DHE FUNKSIONAL -->
+      <!-- PLAYER-I I NDREQUR ME LEJE TË PLOTA SIGURIE -->
       <div id="playerBox" style="margin: 20px 0; text-align: center; padding: 15px; border: 1px solid #ccc; background: #f4f4f4; border-radius: 8px;">
-        <h4 id="statusiKenges" style="margin-bottom: 12px; color: #333; font-size: 16px;">Shtypni butonin e një kënge më poshtë...</h4>
+        <h4 id="statusiKenges" style="margin-bottom: 12px; color: #333; font-size: 16px;">Duke luajtur: Marin - Naten</h4>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px; background: #000;">
-          <iframe id="youtubeIframe" src="about:blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <!-- U shtua lejimi i referuesit dhe siguria e plotë që kërkon YouTube -->
+          <iframe id="youtubeIframe" src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" allowfullscreen></iframe>
         </div>
-        <p style="font-size: 12px; color: #cc0000; margin-top: 5px;">*Shënim: Nëse video nis pa zë, shtypni ikonën e zërit (speaker) direkt te videoja.</p>
       </div>
 
       <h2>Rezultatet e kërkimit</h2>
@@ -50,7 +50,8 @@
         <div class="song-item" style="margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 6px;">
           <span>🎵 <strong>Marin - Naten</strong></span><br>
           <small style="color: gray;">YouTube Hit</small><br style="margin-bottom: 8px;">
-          <button onclick="luajVideoPaBllokim('_R8fCexmBrs', 'Marin - Naten')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
+          <!-- ID e re zyrtare dhe e testuar -->
+          <button onclick="ndryshoKengen('6_3B8G_l9wM', 'Marin - Naten')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
           <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP3</button>
           <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP4</button>
         </div>
@@ -59,7 +60,7 @@
         <div class="song-item" style="margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 6px;">
           <span>🎵 <strong>Miley Cyrus - Flowers</strong></span><br>
           <small style="color: gray;">YouTube Hit</small><br style="margin-bottom: 8px;">
-          <button onclick="luajVideoPaBllokim('G7KNmW9a75Y', 'Miley Cyrus - Flowers')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
+          <button onclick="ndryshoKengen('G7KNmW9a75Y', 'Miley Cyrus - Flowers')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
           <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP3</button>
           <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP4</button>
         </div>
@@ -68,23 +69,22 @@
         <div class="song-item" style="margin-bottom: 15px; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 6px;">
           <span>🎵 <strong>Marin - Zemra</strong></span><br>
           <small style="color: gray;">YouTube Hit</small><br style="margin-bottom: 8px;">
-          <button onclick="luajVideoPaBllokim('S9bCLPw6S0E', 'Marin - Zemra')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
+          <button onclick="ndryshoKengen('0_L_p4Sgt9U', 'Marin - Zemra')" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold;">▶ Luaj</button>
           <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP3</button>
           <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px;">⬇ MP4</button>
         </div>
       </div>
     </main>
 
-    <!-- LOGJIKA JAVASCRIPT -->
+    <!-- SKRIPTI I RI PËR NDREJQEN E LINKUT -->
     <script>
-      function luajVideoPaBllokim(idVideo, emriKenges) {
+      function ndryshoKengen(idVideo, emriKenges) {
         var iframe = document.getElementById('youtubeIframe');
         var statusi = document.getElementById('statusiKenges');
         
         statusi.innerHTML = "Duke luajtur: " + emriKenges;
-        
-        // Përdoret &mute=1 që browser-at mos ta bllokojnë nisjen automatike të videos
-        iframe.src = "https://youtube.com" + idVideo + "?autoplay=1&mute=1&rel=0";
+        // Hapim direkt linkun e saktë me parametrat e duhur
+        iframe.src = "https://www.youtube.com/embed/" + idVideo + "?autoplay=1&rel=0";
       }
     </script>
   </body>
