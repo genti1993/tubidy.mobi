@@ -5,17 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas. Shijoni muzikë MP3 320kbps dhe video MP4 të cilësisë së lartë.">
     <meta name="robots" content="index, follow">
-    <title>Tubidy - Shkarkime MP3 & MP4 | Muzikë dhe Video Falas Online</title>
-    
-    <!-- Metadata për Rrjetet Sociale (Open Graph) -->
-    <meta property="og:locale" content="sq_AL">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tubidy - Shkarkime MP3 & MP4 | Muzikë dhe Video Falas Online">
-    <meta property="og:description" content="Tubidy ju lejon të shkarkoni dhe të dëgjoni muzikë dhe video falas.">
-    <meta property="og:url" content="https://tubidy.llc">
-    <meta property="og:site_name" content="Tubidy">
-    <meta property="og:image" content="https://tubidy.llc">
-    <link href="https://tubidy.llc" rel="canonical">
+    <title>Tubidy - Player Universal i Muzikës</title>
     
     <!-- Lidhja me Stilet -->
     <link rel="stylesheet" href="styles.css">
@@ -30,25 +20,56 @@
     </script>
   </head>
   <body>
-    <header>
-      <img src="https://tubidy.llc" alt="Tubidy Logo" class="logo">
-      <h1>Kërko Muzikë dhe Video</h1>
+    <header style="text-align: center; padding: 20px;">
+      <h1>Tubidy - Luaj Çdo Muzikë</h1>
     </header>
 
-    <main>
+    <main style="max-width: 500px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
+      
       <!-- Fusha e Kërkimit -->
-      <form action="#" method="GET" class="search-form" onsubmit="event.preventDefault(); alert('Kërkimi u krye!');">
-        <input type="text" name="q" placeholder="Shkruaj artistin, këngën ose videon..." required autocomplete="off" class="search-input">
-        <button type="submit" class="search-button">Kërko</button>
+      <form action="#" method="GET" class="search-form" onsubmit="kerkoDheLuaj(event);" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <input type="text" id="inputKerkimi" placeholder="Shkruaj emrin e këngës ose artistit..." required autocomplete="off" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        <button type="submit" style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Luaj</button>
       </form>
-      <p class="subtitle">Kërkoni, dëgjoni dhe shkarkoni mediat tuaja të preferuara falas.</p>
+      
+      <p class="subtitle" style="text-align: center; color: #666;">Shkruani çfarëdo kënge më lart dhe shtypni butonin për ta dëgjuar.</p>
 
-      <!-- PLAYER-I I MUZIKËS (Rreshti 47) -->
-      <div style="margin-top: 30px; text-align: center;">
-        <h3>Duke luajtur: Marin - Audio Hit #1</h3>
-        <audio id="myPlayer" src="audio/hit1.mp3" controls></audio>
+      <!-- PLAYER-I UNIVERSAL -->
+      <div id="playerBox" style="margin-top: 30px; text-align: center; padding: 20px; border: 1px solid #ddd; background: #f9f9f9; border-radius: 10px; display: none;">
+        <h3 id="titulliKenges" style="margin-bottom: 15px; color: #333;">Duke luajtur...</h3>
+        
+        <!-- Ky element do të ngarkojë audion/videon në mënyrë automatike -->
+        <div id="videoContainer" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px;">
+          <iframe id="youtubeIframe" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media" autoplay></iframe>
+        </div>
       </div>
 
     </main>
+
+    <!-- KODI QË MUNDËSON LUAJTJEN E ÇDO KËNGE -->
+    <script>
+      function kerkoDheLuaj(event) {
+        event.preventDefault(); // Ndalon rifreskimin e faqes
+        
+        var kenga = document.getElementById('inputKerkimi').value;
+        var playerBox = document.getElementById('playerBox');
+        var titulli = document.getElementById('titulliKenges');
+        var iframe = document.getElementById('youtubeIframe');
+        
+        if(kenga.trim() !== "") {
+          // Ndryshon titullin në ekran
+          titulli.innerText = "Duke luajtur: " + kenga;
+          
+          // Përdor shërbimin e kërkimit të hapur të YouTube pa pasur nevojë për çelës privat API
+          var urlKerkimi = "https://youtube.com" + encodeURIComponent(kenga) + "&autoplay=1";
+          
+          // Vendos linun e ri te player-i
+          iframe.src = urlKerkimi;
+          
+          // Shfaq player-in në ekran
+          playerBox.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
