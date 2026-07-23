@@ -7,16 +7,16 @@ const YOUTUBE_API_KEY = "ZËVENDËSO_KËTË_ME_API_KEY_TËND_REAL";
 
 // Këngët Trending për faqen e parë (Hite fillestare)
 const trendingDatabase = [
-  { title: "Marin - Naten", artist: "YouTube Hit", videoId: "dQw4w9WgXcQ" },
+  { title: "Marin - Naten", artist: "YouTube Hit", videoId: "6_3B8G_l9wM" },
   { title: "Miley Cyrus - Flowers", artist: "YouTube Hit", videoId: "G7KNmW9a75Y" },
-  { title: "Marin - Zemra", artist: "YouTube Hit", videoId: "kJQP7kiw5Fk" }
+  { title: "Marin - Zemra", artist: "YouTube Hit", videoId: "0_L_p4Sgt9U" }
 ];
 
 // ==========================================
-// 2. INTEGRIMI I YOUTUBE PLAYER API (LOJTARI)
+// 2. INTEGRIMI I YOUTUBE PLAYER API
 // ==========================================
 
-let player; // Variabla globale për kontrollin e lojtarit
+let player; 
 
 // Ngarkojmë scriptin e YouTube në mënyrë asinkrone
 const tag = document.createElement('script');
@@ -30,30 +30,31 @@ if (firstScriptTag && firstScriptTag.parentNode) {
 
 // Ky funksion thirret automatikisht kur API e YouTube është gati
 function onYouTubeIframeAPIReady() {
-  // Sigurohemi që elementi ekziston në HTML përpara se të krijojmë lojtarin
-  if (!document.getElementById('youtube-audio-player')) {
-    console.error("Gabim: Elementi <div id='youtube-audio-player'></div> nuk u gjet në HTML!");
-    return;
-  }
+  if (!document.getElementById('youtube-audio-player')) return;
 
   player = new YT.Player('youtube-audio-player', {
-    height: '315',
+    height: '100%',
     width: '100%',
-    videoId: trendingDatabase[0].videoId, // Zgjedh saktë këngën e parë [0] nga lista
+    videoId: trendingDatabase[0].videoId, // Nis me videon e parë (Marin - Naten)
     playerVars: {
       'playsinline': 1,
-      'autoplay': 0, // Mos e nis automatikisht sa hapet faqja
-      'controls': 1  // Shfaq kontrollet zyrtare të YouTube
+      'autoplay': 0, 
+      'controls': 1  
     }
   });
 }
 
-// Funksioni që ndryshon këngën dhe e luan atë kur klikohet në listë
-function luajKengen(videoId) {
+// Funksioni që ndryshon këngën në player
+function ndryshoKengen(videoId, emriKenges) {
+  const resultsTitle = document.getElementById("resultsTitle");
+  if (resultsTitle) {
+    resultsTitle.innerHTML = `Duke luajtur: ${emriKenges}`;
+  }
+
   if (player && player.loadVideoById) {
     player.loadVideoById(videoId);
   } else {
-    console.error("Lojtari i YouTube nuk është gati ende ose ka dështuar të ngarkohet!");
+    console.error("Lojtari i YouTube nuk është gati ende!");
   }
 }
 
@@ -65,19 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Shfaqim këngët trending sapo hapet faqja
   shfaqKengat(trendingDatabase);
 
-  // Lidhja e eventit të kërkimit pasi DOM është gati
+  // Lidhja e eventit të kërkimit
   const searchForm = document.getElementById("searchForm");
   if (searchForm) {
     searchForm.addEventListener("submit", kryejKerkim);
   }
 });
 
-// Funksion universal për të shfaqur listën e këngëve në HTML
+// Funksion universal që ndërton strukturën e këngëve
 function shfaqKengat(kengat) {
   const resultsList = document.getElementById("resultsList");
   if (!resultsList) return;
   
-  resultsList.innerHTML = ""; // Pastrojmë listën e vjetër
+  resultsList.innerHTML = ""; 
 
   if (kengat.length === 0) {
     resultsList.innerHTML = "<p style='text-align:center;'>Nuk u gjet asnjë këngë.</p>";
@@ -85,21 +86,30 @@ function shfaqKengat(kengat) {
   }
 
   kengat.forEach(kenga => {
-    // Krijojmë elementin e listës për çdo këngë
-    const li = document.createElement("li");
-    li.className = "song-item"; 
-    li.style.cursor = "pointer";
-    li.style.padding = "10px";
-    li.style.borderBottom = "1px solid #eee";
+    const div = document.createElement("div");
+    div.className = "song-item";
+    div.style.marginBottom = "15px";
+    div.style.padding = "15px";
+    div.style.background = "#fff";
+    div.style.border = "1px solid #eee";
+    div.style.borderRadius = "6px";
+    div.style.fontFamily = "Arial, sans-serif";
     
-    li.innerHTML = `<strong>${kenga.artist}</strong> - ${kenga.title}`;
-    
-    // Kur klikohet rreshti, luan këngën përkatëse në player
-    li.addEventListener("click", () => {
-      luajKengen(kenga.videoId);
+    div.innerHTML = `
+      <span>🎵 <strong>${kenga.title}</strong></span><br>
+      <small style="color: gray;">${kenga.artist}</small><br style="margin-bottom: 8px;">
+      <button class="play-btn" style="background: #28a745; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; margin-right: 5px;">▶ Luaj</button>
+      <button style="background: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px; margin-right: 5px; cursor: pointer;">⬇ MP3</button>
+      <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">⬇ MP4</button>
+    `;
+
+    // Lidhja e butonit Luaj me lojtarin e YouTube
+    const playBtn = div.querySelector(".play-btn");
+    playBtn.addEventListener("click", () => {
+      ndryshoKengen(kenga.videoId, kenga.title);
     });
 
-    resultsList.appendChild(li);
+    resultsList.appendChild(div);
   });
 }
 
@@ -116,12 +126,10 @@ async function kryejKerkim(e) {
   const queryInput = searchInput.value.trim();
   if (!queryInput) return;
 
-  const resultsSection = document.getElementById("resultsSection");
   const resultsList = document.getElementById("resultsList");
   const resultsTitle = document.getElementById("resultsTitle");
 
-  if (resultsSection) resultsSection.classList.remove("hidden");
-  if (resultsTitle) resultsTitle.innerText = `🔎 Duke kërkuar në YouTube për "${queryInput}"...`;
+  if (resultsTitle) resultsTitle.innerText = `🔎 Duke kërkuar për "${queryInput}"...`;
   if (resultsList) resultsList.innerHTML = "<p style='text-align:center;'>Ju lutem prisni, po ngarkohet YouTube...</p>";
 
   // Kontrolli nëse është vendosur API Key
@@ -131,7 +139,6 @@ async function kryejKerkim(e) {
     return;
   }
 
-  // URL e kërkimit zyrtar të YouTube
   const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`;
 
   try {
@@ -142,7 +149,7 @@ async function kryejKerkim(e) {
       throw new Error(data.error.message);
     }
 
-    // Mapojmë të dhënat që vijnë nga YouTube
+    // Mapojmë të dhënat që vijnë në kohë reale nga kërkimi
     const kengatEGjetura = data.items.map(item => {
       return {
         title: item.snippet.title,
@@ -151,9 +158,8 @@ async function kryejKerkim(e) {
       };
     });
 
-    // Përditësojmë titullin dhe shfaqim këngët e reja
-    if (resultsTitle) resultsTitle.innerText = `🎶 Rezultatet për: "${queryInput}"`;
-    shfaqKengat(kengatEGjetura);
+    if (resultsTitle) resultsTitle.innerText = `Duke luajtur: Marin - Naten`; 
+    shfaqKengat(kengatEGjetura); 
 
   } catch (error) {
     console.error("Gabim gjatë kërkimit:", error);
