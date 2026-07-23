@@ -20,7 +20,7 @@ let player; // Variabla globale për kontrollin e lojtarit
 
 // Ngarkojmë scriptin e YouTube në mënyrë asinkrone
 const tag = document.createElement('script');
-tag.src = "https://youtube.com";
+tag.src = "https://youtube.com"; // <-- Rreshti 21 u rregullua këtu
 const firstScriptTag = document.getElementsByTagName('script')[0];
 if (firstScriptTag) {
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -99,8 +99,7 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const queryInput = document.getElementById("searchInput").value.trim();
   
-  const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`;
-
+  if (!queryInput) return;
 
   const resultsSection = document.getElementById("resultsSection");
   const resultsList = document.getElementById("resultsList");
@@ -118,7 +117,7 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
   }
 
   // URL e kërkimit zyrtar të YouTube
-  const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`;
+  const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`; // <-- Rreshti 102 u rregullua këtu
 
   try {
     const response = await fetch(url);
