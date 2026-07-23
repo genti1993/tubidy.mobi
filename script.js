@@ -99,7 +99,8 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const queryInput = document.getElementById("searchInput").value.trim();
   
-  if (!queryInput) return;
+  const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`;
+
 
   const resultsSection = document.getElementById("resultsSection");
   const resultsList = document.getElementById("resultsList");
