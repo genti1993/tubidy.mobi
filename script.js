@@ -20,9 +20,9 @@ let player; // Variabla globale për kontrollin e lojtarit
 
 // Ngarkojmë scriptin e YouTube në mënyrë asinkrone
 const tag = document.createElement('script');
-tag.src = "https://youtube.com"; // <-- Rreshti 21 u rregullua këtu
+tag.src = "https://youtube.com"; 
 const firstScriptTag = document.getElementsByTagName('script')[0];
-if (firstScriptTag) {
+if (firstScriptTag && firstScriptTag.parentNode) {
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 } else {
   document.head.appendChild(tag);
@@ -30,10 +30,16 @@ if (firstScriptTag) {
 
 // Ky funksion thirret automatikisht kur API e YouTube është gati
 function onYouTubeIframeAPIReady() {
+  // Sigurohemi që elementi ekziston në HTML përpara se të krijojmë lojtarin
+  if (!document.getElementById('youtube-audio-player')) {
+    console.error("Gabim: Elementi <div id='youtube-audio-player'></div> nuk u gjet në HTML!");
+    return;
+  }
+
   player = new YT.Player('youtube-audio-player', {
     height: '315',
     width: '100%',
-    videoId: trendingDatabase[0].videoId, // Nis me videon e parë trending
+    videoId: trendingDatabase[0].videoId, // Zgjedh saktë këngën e parë [0] nga lista
     playerVars: {
       'playsinline': 1,
       'autoplay': 0, // Mos e nis automatikisht sa hapet faqja
@@ -47,7 +53,7 @@ function luajKengen(videoId) {
   if (player && player.loadVideoById) {
     player.loadVideoById(videoId);
   } else {
-    console.error("Lojtari i YouTube nuk është gati ende!");
+    console.error("Lojtari i YouTube nuk është gati ende ose ka dështuar të ngarkohet!");
   }
 }
 
@@ -58,6 +64,12 @@ function luajKengen(videoId) {
 document.addEventListener("DOMContentLoaded", () => {
   // Shfaqim këngët trending sapo hapet faqja
   shfaqKengat(trendingDatabase);
+
+  // Lidhja e eventit të kërkimit pasi DOM është gati
+  const searchForm = document.getElementById("searchForm");
+  if (searchForm) {
+    searchForm.addEventListener("submit", kryejKerkim);
+  }
 });
 
 // Funksion universal për të shfaqur listën e këngëve në HTML
@@ -95,10 +107,13 @@ function shfaqKengat(kengat) {
 // 4. KËRKIMI REAL NGA YOUTUBE API
 // ==========================================
 
-document.getElementById("searchForm").addEventListener("submit", async (e) => {
+async function kryejKerkim(e) {
   e.preventDefault();
-  const queryInput = document.getElementById("searchInput").value.trim();
   
+  const searchInput = document.getElementById("searchInput");
+  if (!searchInput) return;
+  
+  const queryInput = searchInput.value.trim();
   if (!queryInput) return;
 
   const resultsSection = document.getElementById("resultsSection");
@@ -117,7 +132,7 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
   }
 
   // URL e kërkimit zyrtar të YouTube
-  const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`; // <-- Rreshti 102 u rregullua këtu
+  const url = `https://googleapis.com{encodeURIComponent(queryInput)}&type=video&key=${YOUTUBE_API_KEY}`;
 
   try {
     const response = await fetch(url);
@@ -145,4 +160,4 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
     if (resultsTitle) resultsTitle.innerText = "❌ Ndodhi një gabim";
     if (resultsList) resultsList.innerHTML = `<p style='text-align:center; color:red;'>Nuk u morën dot të dhënat. Sqarim: ${error.message}</p>`;
   }
-});
+}
